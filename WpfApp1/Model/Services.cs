@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Model
 {
-    internal class Services
+    internal class Services//услуги
     {
     }
 }

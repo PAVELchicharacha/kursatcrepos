@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Model
 {
-    internal class Coach
+    internal class Coach//тренер
     {
         double mimir;
     }
