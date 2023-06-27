@@ -10,13 +10,13 @@ namespace WpfApp1.Model
     {
         public string Name { get; }
         public byte Age { get; }
-        public Services Service { get; }
+        public Aboniment Aboniment { get; }
 
-        public Visitor(string Name, byte Age, Services Service)
+        public Visitor(string Name, byte Age, Aboniment Aboniment)
         {
             this.Name = Name;
             this.Age = Age;
-            this.Service = Service;
+            this.Aboniment = Aboniment;
         }
     }
 }
