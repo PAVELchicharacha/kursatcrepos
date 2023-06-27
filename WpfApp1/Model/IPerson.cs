@@ -10,6 +10,6 @@ namespace WpfApp1.Model
     {
         public string Name { get; }
         public byte Age { get; }
-        public Services Service { get; }
+
     }
 }
