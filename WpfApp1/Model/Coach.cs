@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WpfApp1.Model
+﻿namespace WpfApp1.Model
 {
-    internal class Coach//тренер
+    internal class Coach : IPerson//тренер
     {
-        double mimir;
+        public string Name { get; }
+        public byte Age { get; }
+        public Services Service { get; }
+
+        public Coach(string Name, byte Age, Services Service)
+        {
+            this.Name = Name;
+            this.Age = Age;
+            this.Service = Service;
+        }
     }
 }
