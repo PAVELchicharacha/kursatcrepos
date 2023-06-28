@@ -2,6 +2,7 @@
 {
     internal class Coach : IPerson//тренер
     {
+// Updated upstream
         public string CoachName { get; }
         public string CoachsecondName { get; }
         public byte CoachAge { get; }
@@ -13,5 +14,7 @@
             this.CoachAge = Age;
             this.Service = Service;
         }
+        
+//Stashed changes
     }
 }
