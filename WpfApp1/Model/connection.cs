@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Model
 {
-    internal class serviceCoastByVisitor
+    internal class Connection
     {
-
+        public static string path = @"..\..\..\normalBAse.db";
     }
 }
