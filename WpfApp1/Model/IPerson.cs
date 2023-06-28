@@ -8,9 +8,9 @@ namespace WpfApp1.Model
 {
     internal interface IPerson
     {
-        public string CoachName { get; }
-        public string CoachsecondName { get; }
-        public byte CoachAge { get; }
+        public string Name { get; }
+        public string SecondName { get; }
+        public byte Age { get; }
 
     }
 }
