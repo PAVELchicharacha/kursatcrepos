@@ -3,15 +3,15 @@
     internal class Coach : IPerson//тренер
     {
 // Updated upstream
-        public string CoachName { get; }
-        public string CoachsecondName { get; }
-        public byte CoachAge { get; }
+        public string Name { get; }
+  
+        public byte Age { get; }
         public Services Service { get; }
 
         public Coach(string Name, byte Age, Services Service)
         {
-            this.CoachName = Name;
-            this.CoachAge = Age;
+            this.Name = Name;
+            this.Age = Age;
             this.Service = Service;
         }
         

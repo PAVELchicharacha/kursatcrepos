@@ -4,9 +4,45 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Coach" Height="450" Width="800">
+        Title="Coach" Height="400" Width="800">
     <Grid>
-        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+
+            </Grid.RowDefinitions>
+                
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:Card Margin="5">
+                <TextBlock Text="Фамилия" Margin="8"/>
+            </materialDesign:Card>
+            <materialDesign:Card Margin="5" Grid.Row="1" >
+                <TextBlock Text="Имя" Margin="8"/>
+            </materialDesign:Card>
+            <materialDesign:Card Margin="5" Grid.Row="2" >
+                <TextBlock Text="возраст" Margin="8"/>
+            </materialDesign:Card>
+            <materialDesign:Card Margin="5" Grid.Row="0" Grid.Column="1" >
+                <TextBox Text="{Binding CoachName}" Margin="8"/>
+            </materialDesign:Card>
+            <materialDesign:Card Margin="5" Grid.Row="1" Grid.Column="1" >
+                <TextBox Text="{Binding CoachsecondName}" Margin="8"/>
+            </materialDesign:Card>
+            <materialDesign:Card Margin="5" Grid.Row="2" Grid.Column="1" >
+                <TextBox Text="{Binding CoachAge }" Margin="8"/>
+            </materialDesign:Card>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="4" Grid.Column="1">
+                <Button IsDefault="True" Margin="10" Height="30" Width="100" Click="Button_Click">OK</Button>
+                <Button IsCancel="True" Width="100" Height="30" Click="Button_Click_1">Отмена</Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
