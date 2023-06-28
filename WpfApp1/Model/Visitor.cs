@@ -12,6 +12,7 @@ namespace WpfApp1.Model
         public byte Age { get; }
         public Aboniment Aboniment { get; }
         public string SecondName { get; }
+        public Sex Sex { get; }
 
         public Visitor(string Name, byte Age, Aboniment Aboniment)
         {
