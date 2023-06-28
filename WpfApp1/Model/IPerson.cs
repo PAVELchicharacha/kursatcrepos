@@ -9,7 +9,10 @@ namespace WpfApp1.Model
     internal interface IPerson
     {
         public string Name { get; }
+
         
+        public string SecondName { get; }
+
         public byte Age { get; }
 
     }
