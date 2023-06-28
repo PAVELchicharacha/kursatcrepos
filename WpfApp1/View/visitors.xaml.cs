@@ -17,9 +17,9 @@ namespace WpfApp1.View
     /// <summary>
     /// Логика взаимодействия для visitors.xaml
     /// </summary>
-    public partial class visitors : Window
+    public partial class Visitors : Window
     {
-        public visitors()
+        public Visitors()
         {
             InitializeComponent();
         }

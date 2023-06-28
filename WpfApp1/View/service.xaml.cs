@@ -17,9 +17,9 @@ namespace WpfApp1.View
     /// <summary>
     /// Логика взаимодействия для service.xaml
     /// </summary>
-    public partial class service : Window
+    public partial class Service : Window
     {
-        public service()
+        public Service()
         {
             InitializeComponent();
         }

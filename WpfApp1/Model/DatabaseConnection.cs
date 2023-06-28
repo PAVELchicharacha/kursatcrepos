@@ -16,17 +16,7 @@ using (SqliteConnection connection = new SqliteConnection("Data Source=normalBAs
         {
             while (reader.Read())
             {
-                  = new Buyer();
-
-                buyer.ID_Buyer = int.Parse(reader.GetValue(0).ToString()!);
-                buyer.FirstName = reader.GetValue(1).ToString()!;
-                buyer.SecondName = reader.GetValue(2).ToString()!;
-                buyer.LastName = reader.GetValue(3).ToString()!;
-                buyer.DateBirth = reader.GetValue(4).ToString()!;
-                buyer.Passport = reader.GetValue(5).ToString()!;
-                buyer.Address = reader.GetValue(6).ToString()!;
-
-                BuyersList.Add(buyer);
+                
             }
         }
     }
