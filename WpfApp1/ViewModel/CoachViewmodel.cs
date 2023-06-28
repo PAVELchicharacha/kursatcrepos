@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp1.Model
+namespace WpfApp1.ViewModel
 {
-    internal class Connection
+    internal class CoachViewmodel
     {
-        public static string path = @"normalBAse.db";
     }
 }
