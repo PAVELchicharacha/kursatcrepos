@@ -8,5 +8,6 @@ namespace WpfApp1.ViewModel
 {
     internal class CoachViewmodel
     {
+        int i;
     }
 }
