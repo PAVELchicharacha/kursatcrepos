@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:courseworkkk.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Добавить заказчика" Height="550" Width="900">
+        Title="Добавить клиента" Height="550" Width="900">
     <Grid Background="#ffdada">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -54,16 +54,13 @@
                 <TextBox x:Name="SecondName" materialDesign:HintAssist.Hint="Введите фамилию" Margin="10" Text="{Binding SecondName, UpdateSourceTrigger=PropertyChanged}"/>
             </materialDesign:Card>
             <materialDesign:Card Padding="5" Margin="5" Grid.Row="2">
-                <TextBox x:Name="LastName" materialDesign:HintAssist.Hint="Введите отчество" Margin="10" Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
-            </materialDesign:Card>
-            <materialDesign:Card Padding="5" Margin="5" Grid.Row="3">
                 <DatePicker x:Name="DateBirth" materialDesign:HintAssist.Hint="Выберите дату рождения" Margin="10" Text="{Binding DateBirth, UpdateSourceTrigger=PropertyChanged}"/>
             </materialDesign:Card>
-            <materialDesign:Card Padding="5" Margin="5" Grid.Row="4">
-                <TextBox x:Name="Passport" materialDesign:HintAssist.Hint="Введите серию и номер паспорта" Margin="10" Text="{Binding Passport, UpdateSourceTrigger=PropertyChanged}"/>
+            <materialDesign:Card Padding="5" Margin="5" Grid.Row="3">
+                <TextBox x:Name="service" materialDesign:HintAssist.Hint="введите услугу" Margin="10" Text="{Binding Passport, UpdateSourceTrigger=PropertyChanged}"/>
             </materialDesign:Card>
-            <materialDesign:Card Padding="5" Margin="5" Grid.Row="5">
-                <TextBox x:Name="Address" materialDesign:HintAssist.Hint="Введите адрес" Margin="10" Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}"/>
+            <materialDesign:Card Padding="5" Margin="5" Grid.Row="4">
+                <TextBox x:Name="sex" materialDesign:HintAssist.Hint="ваш пол" Margin="10" Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}"/>
             </materialDesign:Card>
             <StackPanel Orientation="Horizontal" Grid.Row="6" HorizontalAlignment="Center">
             </StackPanel>

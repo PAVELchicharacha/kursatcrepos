@@ -38,7 +38,7 @@
                             <MenuItem Header="Список просроченных заданий и их исполнителей"/>
                         </MenuItem>
                     </Menu>
-                    <Button Content="Выйти из мастерской" Click="Button_ExitClick" Width="180" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    
                 </Grid>
             </StackPanel>
         </Border>

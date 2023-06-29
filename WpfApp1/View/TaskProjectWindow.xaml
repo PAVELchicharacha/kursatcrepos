@@ -1,4 +1,4 @@
-﻿<Window x:Class="courseworkkk.View.TaskProjectWindow"
+﻿<Window x:Class="courseworkkk.View.ClientWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,83 +6,58 @@
         xmlns:local="clr-namespace:courseworkkk.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Добавить задание" Height="550" Width="900">
+        Title="Добавить услугу" Height="550" Width="900">
     <Grid Background="#ffdada">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="6*"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <ListBox x:Name="TasksProject" Grid.Row="0" Margin="10"
-                    ItemsSource="{Binding TaskProjectList}" 
-                      SelectedItem="{Binding SelectedTaskProject}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="5">
-                                <TextBlock Text="{Binding Path=NameTaskProject}" FontSize="15" />
-                                <TextBlock Text="{Binding Path=StateTaskProject}" FontSize="15" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Content="Добавить" Width="100" Margin="10" Command="{Binding InsertCommand}"/>
-                    <Button Content="Удалить" Width="100" Margin="10" Command="{Binding RemoveCommand}" CommandParameter="{Binding ElementName=TasksProject, Path=SelectedItem}"/>
-                </StackPanel>
-            </Grid>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="6*"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-
-                    <StackPanel Orientation="Vertical" Cursor="">
-                        <StackPanel Grid.Column="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <ListBox x:Name="Clients" Margin="10" ItemsSource="{Binding ClientsList}" SelectedItem="{Binding SelectedClient}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <TextBlock FontSize="18" Text="{Binding Path=FirstName}"/>
+                            <TextBlock FontSize="18" Text="{Binding Path=SecondName}"/>
+                            <TextBlock FontSize="18" Text="{Binding Path=LastName}"/>
+                            <TextBlock FontSize="18" Text="{Binding Path=DateBirth}"/>
+                            <TextBlock FontSize="18" Text="{Binding Path=Passport}"/>
+                            <TextBlock FontSize="18" Text="{Binding Path=Address}"/>
                         </StackPanel>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                        <materialDesign:Card Padding="5" Margin="5">
-                            <ComboBox x:Name="cbProject" materialDesign:HintAssist.Hint="Выберите проект" Height="40" Margin="10" ItemsSource="{Binding ProjectList}">
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                            <Label Content="{Binding NameProject}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                        </materialDesign:Card>
-                        <materialDesign:Card Padding="5" Margin="5">
-                            <ComboBox x:Name="cbExecutorProject" materialDesign:HintAssist.Hint="Выберите исполнителя" Height="40" Margin="10" ItemsSource="{Binding ExecutorProjectList}">
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                            <Label Content="{Binding FirstName}"/>
-                                            <Label Content="{Binding SecondName}"/>
-                                            <Label Content="{Binding LastName}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                        </materialDesign:Card>
-                        <materialDesign:Card Padding="5" Margin="5">
-                            <TextBox x:Name="nameTaskProject" DataContext="{Binding SelectedTaskProject}" materialDesign:HintAssist.Hint="Введите название задания" Height="40" Margin="10" 
-                                     Text="{Binding NameTaskProject, UpdateSourceTrigger=PropertyChanged}"/>
-                        </materialDesign:Card>
-                        <materialDesign:Card Padding="5" Margin="5">
-                            <TextBox x:Name="stateTaskProject" DataContext="{Binding SelectedTaskProject}" materialDesign:HintAssist.Hint="Введите состояние задания" Height="40" Margin="10"
-                                 Text="{Binding StateTaskProject, UpdateSourceTrigger=PropertyChanged}"/>
-                        </materialDesign:Card>
-                    </StackPanel>
-                </Grid>
-                <Button Content="Применить"  Width="110" Margin="5" Grid.Row="1"  Command="{Binding UpdateCommand}" CommandParameter="{Binding SelectedTaskProject}"/>
-            </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+                <Button Content="Добавить" Width="110" Height="50" Margin="10 0" Command="{Binding AddCommand}" Click="Button_NiceClick"/>
+                <Button Content="Обновить" Width="110" Height="50" Margin="10 0" Command="{Binding UpdateCommand}" CommandParameter="{Binding SelectedClient}" Click="Button_NiceClick"/>
+                <Button Content="Удалить" Width="110" Height="50" Margin="10 0" Command="{Binding RemoveCommand}" CommandParameter="{Binding SelectedClient}" Click="Button_NiceClick"/>
+            </StackPanel>
+
+        </Grid>
+        <Grid Grid.Column="1" DataContext="{Binding SelectedClient}">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Padding="5" Margin="5" Grid.Row="0">
+                <TextBox x:Name="Name" materialDesign:HintAssist.Hint="Введите название услуги" Margin="10" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+            </materialDesign:Card>
+            <materialDesign:Card Padding="5" Margin="5" Grid.Row="1">
+                <TextBox x:Name="coast" materialDesign:HintAssist.Hint="стоимость услуги" Margin="10" Text="{Binding SecondName, UpdateSourceTrigger=PropertyChanged}"/>
+            </materialDesign:Card>
+            <materialDesign:Card Padding="5" Margin="5" Grid.Row="2">
+                <TextBox x:Name="service" materialDesign:HintAssist.Hint="введите услугу" Margin="10" Text="{Binding Passport, UpdateSourceTrigger=PropertyChanged}"/>
+            </materialDesign:Card>
+            <StackPanel Orientation="Horizontal" Grid.Row="6" HorizontalAlignment="Center">
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
