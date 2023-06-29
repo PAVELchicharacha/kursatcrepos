@@ -8,12 +8,12 @@ namespace WpfApp1.Model
 {
     internal class Visitor : Person
     {
-        public Aboniment Aboniment { get; }
+        public Services Service { get; }
 
-        public Visitor(string name, string secondName, byte age, Sex sex, Aboniment aboniment) 
-            :   base(name,secondName,age,sex)
+        public Visitor(string name, string secondName, byte age, Sex sex, Services services)
+            : base(name, secondName, age, sex)
         {
-            Aboniment = aboniment;
+            Service = services;
         }
     }
 }

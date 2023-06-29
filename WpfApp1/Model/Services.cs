@@ -14,6 +14,15 @@
         public string Description { get; }
         public float Price { get; }
         public PaymentType PaymentType { get; }
+
+        public Services() 
+        {
+            Name = string.Empty;
+            Description = string.Empty;
+            Price = 0;
+            PaymentType = PaymentType.Dayly;
+        }
+
         public Services(string Name, float Price, PaymentType PaymentType, string Description = "")
         {
             this.Name = Name;
