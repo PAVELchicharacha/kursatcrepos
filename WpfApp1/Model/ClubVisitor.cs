@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Model
 {
-    internal class Visitor : Person
+    internal class ClubVisitor : Person
     {
-        public Services Service { get; }
+        public ClubServices Service { get; }
 
-        public Visitor(string name, string secondName, byte age, Sex sex, Services services)
+        public ClubVisitor(string name, string secondName, byte age, Sex sex, ClubServices services)
             : base(name, secondName, age, sex)
         {
             Service = services;

@@ -8,14 +8,14 @@
         ByHour,
         OnePayTime
     }
-    internal class Services//услуги
+    internal class ClubServices//услуги
     {
         public string Name { get; }
         public string Description { get; }
         public float Price { get; }
         public PaymentType PaymentType { get; }
 
-        public Services() 
+        public ClubServices() 
         {
             Name = string.Empty;
             Description = string.Empty;
@@ -23,7 +23,7 @@
             PaymentType = PaymentType.Dayly;
         }
 
-        public Services(string Name, float Price, PaymentType PaymentType, string Description = "")
+        public ClubServices(string Name, float Price, PaymentType PaymentType, string Description = "")
         {
             this.Name = Name;
             this.Price = Price;
