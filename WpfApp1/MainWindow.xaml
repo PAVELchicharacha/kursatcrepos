@@ -18,9 +18,9 @@
                 <Grid Margin="0 0 0 20">
                     <Menu FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">
                         <MenuItem Header="Добавить" Height="20">
-                            <MenuItem Header="Добавить Заказчика" Click="MenuItem_Click_Client"></MenuItem>
-                            <MenuItem Header="Добавить Исполнителя" Click="MenuItem_Click_Executor"></MenuItem>
-                            <MenuItem Header="Добавить Проект" Click="MenuItem_Click_Project"></MenuItem>
+                            <MenuItem Header="Добавить Клиента" Click="MenuItem_Click_Client"></MenuItem>
+                            <MenuItem Header="Добавить Тренера" Click="MenuItem_Click_Executor"></MenuItem>
+                            <MenuItem Header="Добавить Услуги" Click="MenuItem_Click_Project"></MenuItem>
                             <MenuItem Header="Добавить Задание" Click="MenuItem_TaskClick"></MenuItem>
                         </MenuItem>
                     </Menu>
