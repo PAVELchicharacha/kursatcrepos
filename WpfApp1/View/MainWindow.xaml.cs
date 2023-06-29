@@ -1,13 +1,16 @@
 ﻿using courseworkkk.View;
 using System.Windows;
+using WpfApp1.ViewModel;
 
 namespace courseworkkk
 {
+    
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();  
+            
         }
 
         private void MenuItem_Click_Client(object sender, RoutedEventArgs e)

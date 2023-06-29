@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.Model;
+using WpfApp1.ViewModel;
 
 namespace courseworkkk.View
 {
@@ -20,6 +22,8 @@ namespace courseworkkk.View
     /// </summary>
     public partial class TaskProjectWindow : Window
     {
+        ClubServiceVM VM = new ClubServiceVM();
+        PaymentType PT = PaymentType.OnePayTime;
         public TaskProjectWindow()
         {
             InitializeComponent();
@@ -28,6 +32,14 @@ namespace courseworkkk.View
         private void Button_NiceClick(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Успешно!");
+            ClubServices CS = new ClubServices(ServiceName.text, (float)Convert.ToDouble(ServiceCoast.text), PT);
+            VM.addService(CS);
         }
+
+        private void PaymantType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            PT = PaymantTypeBox.SelectedValue as PaymentType;
+        }
+
     }
 }

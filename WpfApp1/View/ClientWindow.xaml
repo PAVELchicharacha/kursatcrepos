@@ -57,10 +57,15 @@
                 <DatePicker x:Name="DateBirth" materialDesign:HintAssist.Hint="Выберите дату рождения" Margin="10" Text="{Binding DateBirth, UpdateSourceTrigger=PropertyChanged}"/>
             </materialDesign:Card>
             <materialDesign:Card Padding="5" Margin="5" Grid.Row="3">
-                <TextBox x:Name="service" materialDesign:HintAssist.Hint="введите услугу" Margin="10" Text="{Binding Passport, UpdateSourceTrigger=PropertyChanged}"/>
+                <ComboBox x:Name="Gender" SelectionChanged="Gender_SelectionChanged" SelectedValue="0">
+                    <TextBlock>Male</TextBlock>
+                    <TextBlock>Female</TextBlock>
+                </ComboBox>
             </materialDesign:Card>
             <materialDesign:Card Padding="5" Margin="5" Grid.Row="4">
-                <TextBox x:Name="sex" materialDesign:HintAssist.Hint="ваш пол" Margin="10" Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}"/>
+                <ComboBox x:Name="CoachesService" SelectionChanged="CoachesService_SelectionChanged" SelectedValue="0">
+
+                </ComboBox>
             </materialDesign:Card>
             <StackPanel Orientation="Horizontal" Grid.Row="6" HorizontalAlignment="Center">
             </StackPanel>
