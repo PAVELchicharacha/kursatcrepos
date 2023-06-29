@@ -32,7 +32,7 @@ namespace WpfApp1.View
 
         private void Button_NiceClick(object sender, RoutedEventArgs e)
         {
-            ClubVisitor clubVisitor = new ClubVisitor(FirstName.Text, SecondName.Text, DateBirth.Text, Sex, VisitorService.SelectedValue as ClubServices);
+            ClubVisitor clubVisitor = new ClubVisitor(FirstName.Text, SecondName.Text, Convert.ToByte(DateBirth.Text), Sex, VisitorService.SelectedValue as ClubServices);
             MessageBox.Show("Успешно!");
         }
         private void Gender_SelectionChanged(object sender, RoutedEventArgs e)

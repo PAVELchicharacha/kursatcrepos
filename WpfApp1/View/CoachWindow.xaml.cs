@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using WpfApp1.Model;
 using WpfApp1.ViewModel;
 
@@ -19,7 +20,7 @@ namespace WpfApp1.View
         }
         private void Button_NiceClick(object sender, RoutedEventArgs e)
         {
-            Coach coach = new Coach(FirstName.Text, SecondName.Text, DateBirth.Text,Sex, CoachesService.SelectedValue as ClubServices);
+            Coach coach = new Coach(FirstName.Text, SecondName.Text, Convert.ToByte(DateBirth.Text), Sex, CoachesService.SelectedValue as ClubServices);
             MessageBox.Show("Успешно!");
         }
         private void Gender_SelectionChanged(object sender, RoutedEventArgs e)

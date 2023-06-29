@@ -23,7 +23,7 @@ namespace WpfApp1.View
                 case 1:
                     DisplaceInformation.ItemsSource = new CoachVM().getCoaches();
                     break;
-                    case 2:
+                case 2:
                     DisplaceInformation.ItemsSource = new ClubServiceVM().getServices();
                     break;
             }

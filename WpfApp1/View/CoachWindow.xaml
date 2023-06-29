@@ -40,7 +40,7 @@
                 <TextBox x:Name="SecondName" materialDesign:HintAssist.Hint="Введите фамилию" Margin="10"/>
             </materialDesign:Card>
             <materialDesign:Card Padding="5" Margin="5" Grid.Row="2">
-                <DatePicker x:Name="DateBirth" materialDesign:HintAssist.Hint="Выберите дату рождения" Margin="10"/>
+                <TextBox x:Name="DateBirth" materialDesign:HintAssist.Hint="Выберите дату рождения" Margin="10"/>
             </materialDesign:Card>
             <materialDesign:Card Padding="5" Margin="5" Grid.Row="3">
                 <ComboBox x:Name="Gender" SelectionChanged="Gender_SelectionChanged" SelectedValue="0">
