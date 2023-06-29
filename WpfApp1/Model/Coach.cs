@@ -1,18 +1,13 @@
 ﻿namespace WpfApp1.Model
 {
-    internal class Coach : IPerson//тренер
+    internal class Coach : Person//тренер
     {
-        public string Name { get; }
-        public string SecondName { get; }
-        public byte Age { get; }
         public Services Service { get; }
-        public Sex Sex { get; }
 
-        public Coach(string Name, byte Age, Services Service)
+        public Coach(string name, string secondName, byte age, Sex sex, Services services) 
+            : base(name, secondName, age, sex)
         {
-            this.Name = Name;
-            this.Age = Age;
-            this.Service = Service;
+            Service = services;
         }
     }
 }

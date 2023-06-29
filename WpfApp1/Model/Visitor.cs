@@ -6,19 +6,14 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Model
 {
-    internal class Visitor : IPerson
+    internal class Visitor : Person
     {
-        public string Name { get; }
-        public byte Age { get; }
         public Aboniment Aboniment { get; }
-        public string SecondName { get; }
-        public Sex Sex { get; }
 
-        public Visitor(string Name, byte Age, Aboniment Aboniment)
+        public Visitor(string name, string secondName, byte age, Sex sex, Aboniment aboniment) 
+            :   base(name,secondName,age,sex)
         {
-            this.Name = Name;
-            this.Age = Age;
-            this.Aboniment = Aboniment;
+            Aboniment = aboniment;
         }
     }
 }

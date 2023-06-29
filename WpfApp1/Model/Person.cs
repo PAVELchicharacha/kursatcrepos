@@ -10,12 +10,19 @@ namespace WpfApp1.Model
     {
         Male,Female
     }
-    internal interface IPerson
+    internal abstract class Person
     {
         public string Name { get; }
         public string SecondName { get; }
         public byte Age { get; }
         public Sex Sex { get; }
 
+        public Person(string name, string secondName, byte age, Sex sex)
+        {
+            Name = name;
+            SecondName = secondName;
+            Age = age;
+            Sex = sex;
+        }
     }
 }
