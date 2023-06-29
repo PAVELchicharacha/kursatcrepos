@@ -1,44 +1,30 @@
-﻿using courseworkkk.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using WpfApp1.Model;
 using WpfApp1.ViewModel;
 
-namespace courseworkkk.View
+namespace WpfApp1.View
 {
     /// <summary>
-    /// Логика взаимодействия для ExecutorProjectWindow.xaml
+    /// Логика взаимодействия для CoachWindow.xaml
     /// </summary>
-    public partial class ExecutorProjectWindow : Window
+    public partial class CoachWindow : Window
     {
         CoachVM VM = new CoachVM();
         ClubServiceVM serviceVM = new ClubServiceVM();
-        Sex Gender = Sex.Male;
-        public ExecutorProjectWindow()
+        Sex Sex = Sex.Male;
+        public CoachWindow()
         {
             InitializeComponent();
             CoachesService.ItemsSource = serviceVM.getServices();
-            DataContext = new ExecutorProjectViewModel(this);
         }
         private void Button_NiceClick(object sender, RoutedEventArgs e)
         {
-            Coach coach = new Coach(FirstName.Text, SecondName.text, DateBirth.text,Gender, CoachesService.SelectedValue as ClubServices);
+            Coach coach = new Coach(FirstName.Text, SecondName.Text, DateBirth.Text,Sex, CoachesService.SelectedValue as ClubServices);
             MessageBox.Show("Успешно!");
         }
         private void Gender_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            Gender = (Sex)Gender.SelectedValue;
+            Sex = (Sex)Gender.SelectedValue;
         }
     }
 }

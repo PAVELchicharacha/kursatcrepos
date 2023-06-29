@@ -1,16 +1,14 @@
-﻿using courseworkkk.View;
-using System.Windows;
+﻿using System.Windows;
+using WpfApp1.View;
 using WpfApp1.ViewModel;
 
-namespace courseworkkk
-{
-    
+namespace WpfApp1 
+{ 
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();  
-            
         }
 
         private void MenuItem_Click_Client(object sender, RoutedEventArgs e)
@@ -20,12 +18,12 @@ namespace courseworkkk
         }
         private void MenuItem_Click_Executor(object sender, RoutedEventArgs e)
         {
-            ExecutorProjectWindow executorProjectWindow = new ExecutorProjectWindow();
+            CoachWindow executorProjectWindow = new CoachWindow();
             executorProjectWindow.Show();
         }
         private void MenuItem_Click_Project(object sender, RoutedEventArgs e)
         {
-            ProjectWindow projectWindow = new ProjectWindow();
+            TaskProjectWindow projectWindow = new TaskProjectWindow();
             projectWindow.Show();
         }
         private void MenuItem_Click_Requests(object sender, RoutedEventArgs e)
