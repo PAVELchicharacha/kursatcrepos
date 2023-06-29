@@ -25,7 +25,7 @@ namespace WpfApp1.Model
             {
                 if(service.PaymentType == PaymentType) 
                 {
-                    TotalPrice += service.Price;
+                    TotalPrice += service.Price * Duration;
                 }
                 if(service.PaymentType == PaymentType.OnePayTime)
                 {
