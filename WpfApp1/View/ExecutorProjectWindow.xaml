@@ -1,0 +1,72 @@
+﻿<Window x:Class="courseworkkk.View.ExecutorProjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:courseworkkk.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Добавить исполнителя" Height="550" Width="900">
+    <Grid Background="#ffdada">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+
+            <ListBox x:Name="ExecutorsProject" Margin="10" ItemsSource="{Binding ExecutorsProjectList}" SelectedItem="{Binding SelectedExecutorProject}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <TextBlock FontSize="18" Text="{Binding Path=FirstName}"/>
+                            <TextBlock FontSize="18" Text="{Binding Path=SecondName}"/>
+                            <TextBlock FontSize="18" Text="{Binding Path=LastName}"/>
+                            <TextBlock FontSize="18" Text="{Binding Path=DateBirth}"/>
+                            <TextBlock FontSize="18" Text="{Binding Path=Passport}"/>
+                            <TextBlock FontSize="18" Text="{Binding Path=Address}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+                <Button Content="Добавить" Width="100" Height="40" Margin="10" Command="{Binding AddCommand}" Click="Button_NiceClick"/>
+                <Button Content="Обновить" Width="100" Height="40" Margin="10" Command="{Binding UpdateCommand}" CommandParameter="{Binding SelectedExecutorProject}" Click="Button_NiceClick"/>
+                <Button Content="Удалить" Width="100" Height="40" Margin="10" Command="{Binding RemoveCommand}" CommandParameter="{Binding SelectedExecutorProject}" Click="Button_NiceClick"/>
+            </StackPanel>
+
+        </Grid>
+        <Grid Grid.Column="1" DataContext="{Binding SelectedExecutorProject}">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Padding="5" Margin="5" Grid.Row="0">
+                <TextBox x:Name="FirstName" materialDesign:HintAssist.Hint="Введите имя" Margin="10" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+            </materialDesign:Card>
+            <materialDesign:Card Padding="5" Margin="5" Grid.Row="1">
+                <TextBox x:Name="SecondName" materialDesign:HintAssist.Hint="Введите фамилию" Margin="10" Text="{Binding SecondName, UpdateSourceTrigger=PropertyChanged}"/>
+            </materialDesign:Card>
+            <materialDesign:Card Padding="5" Margin="5" Grid.Row="2">
+                <TextBox x:Name="LastName" materialDesign:HintAssist.Hint="Введите отчество" Margin="10" Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
+            </materialDesign:Card>
+            <materialDesign:Card Padding="5" Margin="5" Grid.Row="3">
+                <DatePicker x:Name="DateBirth" materialDesign:HintAssist.Hint="Выберите дату рождения" Margin="10" Text="{Binding DateBirth, UpdateSourceTrigger=PropertyChanged}"/>
+            </materialDesign:Card>
+            <materialDesign:Card Padding="5" Margin="5" Grid.Row="4">
+                <TextBox x:Name="Passport" materialDesign:HintAssist.Hint="Введите серию и номер паспорта" Margin="10" Text="{Binding Passport, UpdateSourceTrigger=PropertyChanged}"/>
+            </materialDesign:Card>
+            <materialDesign:Card Padding="5" Margin="5" Grid.Row="5">
+                <TextBox x:Name="Address" materialDesign:HintAssist.Hint="Введите адрес" Margin="10" Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}"/>
+            </materialDesign:Card>
+        </Grid>
+    </Grid>
+</Window>

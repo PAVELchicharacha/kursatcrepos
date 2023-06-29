@@ -1,0 +1,113 @@
+﻿<Window x:Class="courseworkkk.View.ProjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:courseworkkk.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:localMy="clr-namespace:courseworkkk.Model"
+        mc:Ignorable="d"
+        Title="Добавление проекта" Height="700" Width="900">
+    <Window.Resources>
+        <localMy:FromBytesToImageConverter x:Key="myConverter"/>
+    </Window.Resources>
+    <Grid Background="#ffdada">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <ListBox x:Name="Projects" Grid.Row="0" Margin="10,10,10,10"
+                    ItemsSource="{Binding ProjectList}" 
+                      SelectedItem="{Binding SelectedProject}" Grid.ColumnSpan="2">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="{Binding Path=NameProject}" FontSize="15" />
+                                <TextBlock Text="{Binding Path=PriceProject}" FontSize="15" />
+                                <TextBlock Text="{Binding Path=DeadlineProject}" FontSize="15" />
+                                <TextBlock Text="{Binding Path=StateProject}" FontSize="15" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2">
+                    <Button Content="Добавить" Width="100" Margin="10" Command="{Binding InsertCommand}"/>
+                    <Button Content="Удалить" Width="100" Margin="10" Command="{Binding RemoveCommand}" CommandParameter="{Binding ElementName=Projects, Path=SelectedItem}"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" Cursor="">
+                        <StackPanel Grid.Column="0">
+                            <materialDesign:Card Margin="5">
+                                <Image x:Name="StateImage" Margin="10" Height="200" 
+                                   Source="{Binding ImageState,Converter={StaticResource myConverter}}"/>
+                            </materialDesign:Card>
+                        </StackPanel>
+                        <materialDesign:Card Margin="5">
+                            <Button Content="Загрузить" FontSize="20" Command="{Binding LoadCommand}"/>
+                        </materialDesign:Card>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                        <materialDesign:Card Padding="5" Margin="5">
+                            <ComboBox x:Name="cbClient" materialDesign:HintAssist.Hint="Выберите заказчика" Height="40" Margin="10" ItemsSource="{Binding ClientList}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="{Binding FirstName}"/>
+                                            <Label Content="{Binding SecondName}"/>
+                                            <Label Content="{Binding LastName}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </materialDesign:Card>
+                        <materialDesign:Card Padding="5" Margin="5">
+                            <ComboBox x:Name="cbExecutorProject" materialDesign:HintAssist.Hint="Выберите исполнителя" Height="40" Margin="10" ItemsSource="{Binding ExecutorProjectList}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="{Binding FirstName}"/>
+                                            <Label Content="{Binding SecondName}"/>
+                                            <Label Content="{Binding LastName}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </materialDesign:Card>
+                        <materialDesign:Card Padding="5" Margin="5">
+                            <TextBox x:Name="nameProject"  DataContext="{Binding SelectedProject}" materialDesign:HintAssist.Hint="Введите название проекта" Height="40" Margin="10" 
+                                     Text="{Binding NameProject, UpdateSourceTrigger=PropertyChanged}"/>
+                        </materialDesign:Card>
+                        <materialDesign:Card Padding="5" Margin="5">
+                            <TextBox x:Name="priceProject" DataContext="{Binding SelectedProject}" materialDesign:HintAssist.Hint="Введите цену проекта" Height="40" Margin="10" 
+                                 Text="{Binding PriceProject, UpdateSourceTrigger=PropertyChanged}"/>
+                        </materialDesign:Card>
+                        <materialDesign:Card Padding="5" Margin="5">
+                            <DatePicker x:Name="deadlineProject" DataContext="{Binding SelectedProject}" materialDesign:HintAssist.Hint="Введите срок выполнения проекта" Height="40" Margin="10"
+                                 Text="{Binding DeadlineProject, UpdateSourceTrigger=PropertyChanged}"/>
+                        </materialDesign:Card>
+                        <materialDesign:Card Padding="5" Margin="5">
+                            <TextBox x:Name="stateProject" DataContext="{Binding SelectedProject}" materialDesign:HintAssist.Hint="Введите состояние проекта" Height="40" Margin="10"
+                                 Text="{Binding StateProject, UpdateSourceTrigger=PropertyChanged}"/>
+                        </materialDesign:Card>
+                    </StackPanel>
+                </Grid>
+                <Button Content="Применить"  Width="110" Margin="5" Grid.Row="1" Command="{Binding UpdateCommand}" CommandParameter="{Binding SelectedProject}"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

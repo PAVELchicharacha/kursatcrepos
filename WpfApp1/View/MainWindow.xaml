@@ -1,0 +1,46 @@
+﻿<Window x:Class="courseworkkk.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:courseworkkk"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="WEB-Мастерская" Height="450" Width="800">
+    <Grid Background="#ffdada">
+        
+        <Border MinWidth="400" Margin="15" Background="#fff" VerticalAlignment="Center"  Padding="30" MaxWidth="700" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightPink" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="WEB-Мастерская" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <Grid Margin="0 0 0 20">
+                    <Menu FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <MenuItem Header="Добавить" Height="20">
+                            <MenuItem Header="Добавить Заказчика" Click="MenuItem_Click_Client"></MenuItem>
+                            <MenuItem Header="Добавить Исполнителя" Click="MenuItem_Click_Executor"></MenuItem>
+                            <MenuItem Header="Добавить Проект" Click="MenuItem_Click_Project"></MenuItem>
+                            <MenuItem Header="Добавить Задание" Click="MenuItem_TaskClick"></MenuItem>
+                        </MenuItem>
+                    </Menu>
+                    <Menu HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <MenuItem Header="Выполнить запрос" FontSize="15">
+                            <MenuItem Header="Cписок всех заказчиков"/>
+                            <MenuItem Header="Cписок всех проектов"/>
+                            <MenuItem Header="Cписок всех исполнителей"/>
+                            <MenuItem Header="Cписок заданий по заданному исполнителю"/>
+                            <MenuItem Header="Cписок заданий и исполнителей по заданному проекту"/>
+                            <MenuItem Header="Cтоимость всех реализованных проектов"/>
+                            <MenuItem Header="Cтоимость всех нереализованных проектов"/>
+                            <MenuItem Header="Список проектов с дедлайном в ближайший месяц"/>
+                            <MenuItem Header="Полная справку о заданном проекте"/>
+                            <MenuItem Header="Список просроченных заданий и их исполнителей"/>
+                        </MenuItem>
+                    </Menu>
+                    <Button Content="Выйти из мастерской" Click="Button_ExitClick" Width="180" Style="{StaticResource MaterialDesignFlatButton}"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+﻿<Window x:Class="courseworkkk.View.RegWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:courseworkkk.View"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="WEB-Workshop" Height="600" Width="800">
+    <Grid Background="#ffdada">
+        <Border MinWidth="400" Margin="15" Background="#fff" VerticalAlignment="Center"  Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightPink" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Вход в личный кабинет" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <Label Content="Введите логин"/>
+                <TextBox x:Name="LoginBox"/>
+                <Label Content="Введите пароль"/>
+                <PasswordBox x:Name="PasswordBox"/>
+                <Grid>
+                    <Button Content="Зарегестрироваться" HorizontalAlignment="Left" Margin="0 20 0 0" Click="Button_RegClick" Command="{Binding RegisterCommand}" />
+                    <Button Content="Войти в WEB-Мастерскую" HorizontalAlignment="Right" Margin="0 20 0 0" Command="{Binding LoginCommand}" />
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
