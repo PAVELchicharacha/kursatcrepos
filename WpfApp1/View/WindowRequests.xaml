@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="Запрос" Height="450" Width="800">
     <Grid Background="#ffdada">
-       
+        <StackPanel Orientation="Vertical">
+            <ComboBox x:Name="Selector" SelectionChanged="Selector_SelectionChanged">
+                <TextBlock>Visitors</TextBlock>
+                <TextBlock>Coachers</TextBlock>
+                <TextBlock>Services</TextBlock>
+            </ComboBox>
+            <DataGrid x:Name="DisplaceInformation" AutoGenerateColumns="True">
+                
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </Window>

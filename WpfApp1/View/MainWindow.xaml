@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="WEB-Мастерская" Height="450" Width="800">
+        Title="SportClub" Height="450" Width="800">
     <Grid Background="#ffdada">
         
         <Border MinWidth="400" Margin="15" Background="#fff" VerticalAlignment="Center"  Padding="30" MaxWidth="700" CornerRadius="20">
@@ -14,7 +14,7 @@
                 <DropShadowEffect BlurRadius="30" Color="LightPink" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="WEB-Мастерская" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <TextBlock Text="SportClub" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
                 <Grid Margin="0 0 0 20">
                     <Menu FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">
                         <MenuItem Header="Добавить" Height="20">
